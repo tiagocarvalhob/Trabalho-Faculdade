@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 13px;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    /* Ajuste o padding para controle da altura */
+    height: 80px;
+    /* Defina a altura do cabeçalho aqui */
+    z-index: 2;
+    background-color: #ffffff00;
+    /* Adiciona fundo branco para o cabeçalho */
+}
+
+header img {
+    width: 80px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 30px;
+    /* Espaçamento entre os links */
+}
+
+header nav ul li {
+    display: inline;
+    /* Garante que os itens do menu fiquem na horizontal */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #8f00d1;
+    /* Cor de destaque no hover */
+}
+
+section {
+    background: radial-gradient(#ffffff, #cecece);
+    height: 100vh;
+    position: relative;
+}
+
+section .list {
+    width: 70vw;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+section .list .item {
+    position: absolute;
+    inset: 0;
+    transform: translateX(100vw);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+section .list .item.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+section .list .item .car-img {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 40vw;
+    max-width: 600px;
+}
+
+section .list .item .car-img img {
+    width: 100%;
+    transform: rotate(0);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+section .list .item.active .car-img img {
+    transform: rotate(-10deg);
+}
+
+section .list .item .content {
+    position: absolute;
+    right: 100px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+section .list .item .content .car-information {
+    font-weight: bold;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.7s;
+    transition-delay: 0.3s;
+}
+
+section .list .item .content h2 {
+    font-size: 7em;
+    line-height: 1em;
+    font-family: "League Gothic", sans-serif;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.7s;
+    transition-delay: 0.5s;
+}
+
+section .list .item .content .description {
+    color: #8f00d1;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.7s;
+    transition-delay: 0.7s;
+}
+
+section .list .item .content .information {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #424242;
+    background-color: #8f00d1;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 0.7s;
+    transition-delay: 0.9s;
+}
+
+section .list .item.active .content .car-information,
+section .list .item.active .content h2,
+section .list .item.active .content .description,
+section .list .item.active .content .information {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.arrows {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    background: #fff;
+}
+
+.arrows button:hover {
+    background-color: #8f00d1;
+}
+
+.arrows button img {
+    width: 30px;
+    margin-top: 4px;
+}
+
+.arrows button:nth-child(1) img {
+    transform: scaleX(-1);
+}
+
+.indicators {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+}
+
+.indicators .number {
+    font-size: 5em;
+    font-family: "League Gothic", sans-serif;
+}
+
+.indicators ul {
+    display: flex;
+    gap: 10px;
+}
+
+.indicators ul li {
+    width: 50px;
+    height: 5px;
+    background-color: #8f00d1;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.indicators ul li.active {
+    background-color: #fff;
+
+}
+
+section .list .item:last-child .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical */
+    align-items: center;     /* horizontal */
+    text-align: center;
+    height: 100%; /* garante que ocupe o espaço total do item */
+    width: 100%; /* Garante que a largura ocupe todo o espaço disponível */
+    margin: 0 auto; /* Garante que o item seja centralizado */
+    transform: translateX(80px); /* Ajuste manual para mover para a esquerda (-) ou direita (+) */
+}
+
+section .list .item:last-child .content .description,
+section .list .item:last-child .content h2,
+section .list .item:last-child .content .car-information {
+    text-align: center;
+    width: 100%; /* para garantir que o texto fique centralizado */
+}
+
+section .list .item:last-child .content .information {
+    display: flex; /* Aplica o comportamento flexível */
+    justify-content: center; /* Garante que o botão fique no centro */
+    margin: 20px auto 0; /* centraliza o botão */
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 100vw;
+        padding: 15px 0;
+    }
+
+    header img {
+        width: 60px;
+    }
+
+    header nav ul {
+        gap: 20px;
+    }
+
+    section .list {
+        width: 95vw;
+    }
+
+    section .list .item .car-img {
+        width: 70vw;
+        left: -10vw;
+        max-width: none;
+    }
+
+    section .list .item .content {
+        right: 10px;
+        width: 50%;
+        gap: 10px;
+        padding-right: 10px;
+        z-index: 2;
+        text-align: center;
+    }
+
+    section .list .item .content h2 {
+        font-size: 2.9em;
+        line-height: 1.4em;
+        letter-spacing: 0.5px;
+        margin-top: 20px;
+        font-weight: normal;
+    }
+
+    section .list .item .content .description {
+        font-size: 9px;
+        max-width: 80%;
+    }
+
+    section .list .item .content .information {
+        height: 20px;
+        width: 100px;
+        font-size: 10px;
+    }
+
+    .arrows {
+        position: absolute;
+        width: 90%;
+        bottom: 70px;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    #prev,
+    #next {
+        position: absolute;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all;
+        transition: transform 0.3s ease, filter 0.3s ease, background 0.3s ease;
+    }
+
+    #prev {
+        left: 20px;
+    }
+
+    #next {
+        right: 20px;
+    }
+
+    #prev:hover,
+    #next:hover {
+        transform: scale(1.2);
+        filter: brightness(1.1);
+        background: #8f00d1;
+    }
+
+    #prev img,
+    #next img {
+        width: 20px;
+        margin-top: 4px;
+    }
+
+    .indicators {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        text-align: center;
+        height: auto;
+    }
+
+    .indicators ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .indicators .number {
+        font-size: 3em;
+    }
+
+    .indicators ul li {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #ddd;
+    }
+
+    .indicators ul li.active {
+        background-color: #8e44ad;
+    }
+
+    .information {
+        content: "Saiba Mais";
+    }
+
+    .item.final {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 20px;
+        margin-left: -70px; /* Mude esse valor para empurrar mais pra esquerda */
+    }
+    
+    .item.final .content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 560px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .item.final .youtube-video {
+        width: 80%;
+    }
+    
+    .item.final .youtube-video iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+}
+       
