@@ -1,4 +1,5 @@
-Inteligência Artificial: Entenda os Conceitos e Aplicações da IA
+## 🤖 Projeto de Inteligência Artificial
+Entenda os Conceitos e Aplicações da IA
 Projeto desenvolvido por Tiago Carvalho no curso de Análise e Desenvolvimento de Sistemas, focando no entendimento e divulgação dos principais conceitos da Inteligência Artificial.
 
 Tecnologias Utilizadas:
@@ -140,7 +141,7 @@ Sora (IA para vídeos)
 
 Importância: A IA está entrando em uma nova era, onde não apenas executa tarefas, mas também cria, expandindo os limites do que é possível com a tecnologia.
 
-Contato:
+## 📬 Contato
 
 [![Email](https://img.shields.io/badge/E--mail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tiagocarvalhobnb@gmail.com)
 [![Instagram](https://img.shields.io/badge/@tiagoocarvalhoz-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/tiagoocarvalhoz)
